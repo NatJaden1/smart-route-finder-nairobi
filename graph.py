@@ -87,9 +87,75 @@ def display_graph():
     for location, neighbours in graph.items():
         print(f"{location}: {neighbours}")
 
-
-print(display_graph())
-
 if __name__ == "__main__":
     display_graph()
 
+# Dictionary storing additional information about each location
+
+location_info = {
+    "CBD": {
+        "full_name": "Central Business District",
+        "category": "Commercial",
+        "description": "The main business and financial centre of Nairobi."
+    },
+
+    "Westlands": {
+        "full_name": "Westlands",
+        "category": "Commercial",
+        "description": "A busy area known for offices, shopping malls, restaurants, and nightlife."
+    },
+
+    "Parklands": {
+        "full_name": "Parklands",
+        "category": "Residential",
+        "description": "A residential area with schools, hospitals, and shopping centres."
+    },
+
+    "Ngara": {
+        "full_name": "Ngara",
+        "category": "Residential",
+        "description": "A mixed residential and commercial neighbourhood close to the CBD."
+    },
+
+    "Upper Hill": {
+        "full_name": "Upper Hill",
+        "category": "Business District",
+        "description": "A major financial district with corporate offices and hospitals."
+    },
+
+    "Kilimani": {
+        "full_name": "Kilimani",
+        "category": "Residential",
+        "description": "A modern residential area with apartments, restaurants, and shopping centres."
+    },
+
+    "Lavington": {
+        "full_name": "Lavington",
+        "category": "Residential",
+        "description": "An upscale residential neighbourhood known for quiet estates."
+    },
+
+    "Karen": {
+        "full_name": "Karen",
+        "category": "Residential",
+        "description": "A leafy suburb famous for spacious homes, attractions, and nature."
+    },
+
+    "Langata": {
+        "full_name": "Langata",
+        "category": "Residential",
+        "description": "A suburban area near Nairobi National Park and several schools."
+    },
+
+    "Industrial Area": {
+        "full_name": "Industrial Area",
+        "category": "Industrial",
+        "description": "The main manufacturing and industrial zone of Nairobi."
+    }
+}
+
+def get_location_info(location):
+    """
+    Returns information about a specific location.
+    """
+    return location_info.get(location, "Location not found.")
