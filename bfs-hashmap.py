@@ -102,36 +102,3 @@ def route_exists(graph, start, destination):
                     queue.append(neighbour)
 
     return False
-
-
-# ==========================
-# TESTING
-# ==========================
-
-if __name__ == "__main__":
-
-    # Example graph
-    graph = {
-        "CBD": [("Westlands", 5), ("Upper Hill", 3)],
-        "Westlands": [("CBD", 5), ("Parklands", 2)],
-        "Upper Hill": [("CBD", 3), ("Kilimani", 4)],
-        "Parklands": [("Westlands", 2)],
-        "Kilimani": [("Upper Hill", 4)]
-    }
-
-    # Hash Map
-    location_map = LocationMap()
-
-    for location in graph.keys():
-        location_map.add_location(location)
-
-    location_map.display_locations()
-
-    print("\nBFS Traversal from CBD:")
-    print(bfs(graph, "CBD"))
-
-    print("\nRoute Exists (CBD -> Kilimani):")
-    print(route_exists(graph, "CBD", "Kilimani"))
-
-    print("\nRoute Exists (CBD -> Airport):")
-    print(route_exists(graph, "CBD", "Airport"))
